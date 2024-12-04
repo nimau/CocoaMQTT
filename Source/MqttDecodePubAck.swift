@@ -16,7 +16,7 @@ public class MqttDecodePubAck: NSObject {
     public var reasonCode: CocoaMQTTPUBACKReasonCode?
     public var msgid: UInt16 = 0
     public var reasonString: String?
-    public var userProperty: [String: String]?
+    public var userProperty: [String: String] = [:]
 
 
 
@@ -91,7 +91,7 @@ public class MqttDecodePubAck: NSObject {
                     value = valRes.resStr
                     dataIndex = valRes.newOffset
 
-                    userProperty![key!] = value
+                    userProperty[key!] = value
 
 
                 default:
